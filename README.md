@@ -1,5 +1,7 @@
 # Voxel World Survival
 
+[中文](README.md) | [English](README.en.md)
+
 一个基于 **HTML + Three.js** 的浏览器 3D 像素生存游戏，目标是做成“打开网页就能玩”的类《我的世界》体验。
 
 仓库地址：<https://github.com/daved1210/test16>
