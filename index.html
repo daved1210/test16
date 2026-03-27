@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voxel World Survival</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game-canvas"></canvas>
+
+      <div id="overlay" class="overlay visible">
+        <h1>Voxel World Survival</h1>
+        <p>点击屏幕开始</p>
+        <p>WASD 移动，空格跳跃，Shift 下落</p>
+        <p>长按左键挖掘，右键放置 / 打开合成台</p>
+        <p>1-9 切换快捷栏，E 打开背包</p>
+      </div>
+
+      <div id="inventory" class="panel-layer hidden">
+        <div class="panel inventory-panel">
+          <div class="panel-header">
+            <h2>背包</h2>
+            <span>点击资源放入当前选中的合成格或快捷栏</span>
+          </div>
+          <div class="panel-columns">
+            <section>
+              <h3>物品</h3>
+              <div id="inventory-grid" class="inventory-grid"></div>
+            </section>
+            <section>
+              <h3>2x2 合成</h3>
+              <div id="craft-grid-small" class="craft-grid craft-grid-2"></div>
+              <button id="craft-result-small" class="craft-result" type="button">无可用配方</button>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div id="crafting-table-panel" class="panel-layer hidden">
+        <div class="panel inventory-panel">
+          <div class="panel-header">
+            <h2>合成台</h2>
+            <span>右键合成台打开，支持 3x3 合成</span>
+          </div>
+          <div class="panel-columns">
+            <section>
+              <h3>物品</h3>
+              <div id="crafting-table-inventory-grid" class="inventory-grid"></div>
+            </section>
+            <section>
+              <h3>3x3 合成</h3>
+              <div id="craft-grid-large" class="craft-grid craft-grid-3"></div>
+              <button id="craft-result-large" class="craft-result" type="button">无可用配方</button>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div id="hud" class="hud">
+        <div class="crosshair"></div>
+        <div id="debug" class="badge debug"></div>
+        <div id="message" class="badge message"></div>
+        <div id="time" class="badge time-badge"></div>
+        <div id="mode" class="badge mode-badge">模式：生存</div>
+        <div id="health" class="badge health-badge">生命：20</div>
+        <div id="target-info" class="badge target-badge"></div>
+        <div class="mine-progress-wrap">
+          <div id="mine-progress" class="mine-progress"></div>
+        </div>
+        <div id="hotbar" class="hotbar"></div>
+      </div>
+    </div>
+    <script src="./vendor/three.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
